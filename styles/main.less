@@ -352,7 +352,11 @@ a, a:hover, a:visited, a:active {
 }
 
 //codes added to match the styles
-
+.asset-type-imagegroup {
+  &.asset-size-2 {
+    padding-top: 50px;
+  }
+}
 .asset-title {
   #main-region & {
     color: #6c8a23;
@@ -385,6 +389,9 @@ a, a:hover, a:visited, a:active {
   .link-btn {
     background-color: #fff !important;
     color: @custom-color !important;
+    &:hover {
+      background-color: #f2f2f2 !important;
+    }
   }
   a {
     color: #fff;
@@ -408,34 +415,14 @@ strong, em, b, i {
   #main-region & {
     color: #347095;
   }
-  #footer-region & {
-    color: #183c52;
-  }
+
 }
 
 #main-region .body i,
 #main-region .body em {
   color: #666 !important;
 }
-/*.columnizer-row-contents-text-text-text .columnizer-col {
-  width: 220px;
-  margin-left: 20px;
 
-}
-
-.columnizer-row-contents-text-text-text *:last-child {
-  width: 400px;
-  margin-left: 80px;
-  .body {
-    font-size: 13px;
-  }
-}
-
-.columnizer-row-contents-text-text-text *:first-child {
-  width: 220px;
-  margin-right: 20px;
-  margin-left: 0;
-}*/
 
 .populr-image-slider {
   background: #f8f8f8;
