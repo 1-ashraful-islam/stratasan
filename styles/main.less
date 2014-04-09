@@ -5,14 +5,13 @@
 // here as well. It's not a great solution, but at least it works!
 
 // uncomment next line in local theming environment
-@import 'palette-transparent';
-@import 'palette-custom';
+//@import 'palette-transparent';
+//@import 'palette-custom';
 @import 'palette-default';
 @import 'variables';
 @import '//populr.me/assets/developers/populr_mixins.less';
 @import 'preboot';
-@import '//fonts.googleapis.com/css?family=Titillium+Web:400,300,400italic,300italic,600,600italic,200italic,200&.css';
-
+@import '//fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic';
 
 @pop-width: 960px;
 @padding-width: 20px;
@@ -22,7 +21,7 @@
 @baseline: 20px;
 @shadow-color: desaturate(darken(@custom-color, 35%), 20%);
 @populr-theme-version: 1;
-@footer-background-color: mix(@background-color, #111, 30%);
+@footer-background-color: mix(@background-color, #2C8EB1, 30%);
 
 #reset > .global-reset();
 
@@ -36,10 +35,11 @@
 #footer-region {
   padding-bottom: 20px;
   padding-top: 20px;
+
 }
 
 body {
-  font-family: 'Titillium Web', Verdana, sans-serif;
+  font-family: 'Arimo', sans-serif;
   font-weight: 300px;
   font-size: 15px;
   line-height: 1.33;
@@ -54,19 +54,21 @@ em, i {
   font-style: italic;
 }
 
-#top-border {
-  background-color: @custom-color;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 5px;
-  width: 100%;
-}
 
 #header {
-  margin: 0 auto;
-  padding: 25px 0 15px;
-  width: @pop-width;
+  width: 100%;
+  border-bottom: 5px solid #84A435;
+  height: 50px;
+  background-color: #E4E2E2;
+  position: fixed;
+  z-index: 1000;
+  #top-logo {
+    background: url("@{base-url}/images/logo.png") no-repeat;
+    width: @pop-width;
+    height: 50px;
+    margin: 10px auto 0;
+
+  }
 }
 
 #main-content {
@@ -76,9 +78,13 @@ em, i {
 #header-separator {
   position: relative;
 }
-
+#main-region {
+border-bottom: 5px solid #335b73;
+  background: #f2f2f2 url("@{base-url}/images/content_bg.jpg");
+  padding-top: 75px;
+}
 #footer-region {
-  background: @footer-background-color;
+  background: @footer-background-color url("@{base-url}/images/footer_bg.jpg") repeat;
   .footer-text-color();
 
   a, a:hover, a:visited, a:active {
@@ -148,7 +154,7 @@ a, a:hover, a:visited, a:active {
   .asset-background();
 
   .asset-text {
-    padding: @text-padding;
+    padding: @text-padding 0 0;
   }
 
   h2.asset-title {
@@ -304,7 +310,7 @@ a, a:hover, a:visited, a:active {
   .cycle-pager {
     color: @custom-color;
     position: absolute;
-    bottom: -28px;
+    bottom: -38px;
     width: 100%;
     font-family: Verdana, sans-serif;
     span.cycle-pager-active {
@@ -314,14 +320,171 @@ a, a:hover, a:visited, a:active {
 }
 .lt-ie8 .cycle-pager { display: none; }
 
+//codes added to match the styles
+
+  .asset-title {
+    #main-region &{
+      color: #6c8a23;
+      font-size: 19px;
+      line-height: 24px;
+    }
+    #footer-region & {
+      color: #fff;
+      font-size: 18px;
+      line-height: 22px;
+    }
+}
+  strong,em {
+    #main-region & {
+      color: #347095;
+    }
+    #footer-region & {
+      color: #183c52;
+    }
+  }
+
+.populr-image-slider {
+  background: #f8f8f8;
+  border: 1px solid #e6e6e6;
+  padding: 5px;
+}
+#branding-footer {
+  background-color: #386682;
+  border-top: 5px solid #2e5369;
+  -webkit-box-shadow: inset 0 -4px 8px -2px rgba(0,0,0,.25);
+  -moz-box-shadow: inset 0 -4px 8px -2px rgba(0,0,0,.25);
+  box-shadow: inset 0 -4px 8px -2px rgba(0,0,0,.25);
+  padding: 20px 0;
+  .container {
+    width: auto;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    zoom: 1;
+    color: #8bc5e8;
+    .clearfix;
+    //    .row >div {
+    //      display: inline-block;
+    //    }
+    .row {
+      .clearfix;
+    }
+    .row > [class*="span"] {
+       display: inline;
+      float: left;
+    }
+    .company-info {
+      width: 460px;
+      font-size: 13px;
+      margin-left: 0 ;
+      #bottom-logo {
+        background: url("@{base-url}/images/footer_logo.png") no-repeat;
+        width: 170px;
+        height: 50px;
+      }
+      h4 {
+        color: #fff;
+      }
+    }
+    #footer-social-links {
+      width: 160px;
+      font-size: 11px;
+      margin-left: 80px;
+      padding-top: 20px;
+      a {
+        padding-left: 20px;
+      }
+      li {
+        height: 14px;
+        line-height: 12px;
+        margin-bottom: 12px;
+        overflow: hidden;
+        padding-top: 1px;
+      }
+      .social-footer {
+        background-image: url('@{base-url}/images/social_sprite.png');
+        background-repeat: no-repeat;
+        background-position: 0px 0px;
+      }
+      .email-footer {
+        background-position: -32px -34px;
+      }
+      .twitter-footer {
+        background-position: -32px -11px;
+      }
+      .linkedin-footer {
+        background-position: -32px -22px;
+      }
+      .rss-footer {
+        background-position: -32px -46px;
+      }
+
+    }
+    #contact-info {
+      width: 220px;
+      font-size: 13px;
+      margin-left: 20px;
+      address {
+        padding: 20px 0;
+        margin-bottom: 18px;
+        strong {
+          color: #fff;
+        }
+        color: #b4e0fa;
+
+      }
+      .bttn {
+        background-color: #fff;
+        font-weight: bold;
+        color: #335b73!important;
+        padding: 5px 22px;
+        border: 1px solid #aaa;
+        border-radius: 4px;
+        margin-bottom: 25px;
+        font-size: 13px;
+        width: 170px;
+        height: 22px;
+        display: block;
+        line-height: 22px;
+      }
+    }
+    a {
+      color: #8bc5e8;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+}
+#copyright-footer {
+
+  background-color: #234d66;
+  width: auto;
+  padding-top: 17px;
+  padding-bottom: 10px;
+  .container {
+    width: auto;
+    max-width: 960px;
+    margin: 0 auto;
+    p {
+      color: #fff;
+      font-size: 11px;
+      line-height: 18px;
+    }
+  }
+}
+
+
 @media screen and (max-width: 960px)  {
   #populr > .mobile-reset();
 
   #header {
-    max-width: 720px;
-    padding-left: 15px;
-    padding-right: 15px;
-    width: auto;
+    #top-logo {
+      width: auto !important;
+      margin-left: 20px;
+    }
   }
 
   .asset-type-imagegroup .image-container, .asset-type-imagegroup .asset-inner:before, .asset-type-imagegroup .asset-inner:after { width: inherit!important; height: inherit!important; .box-shadow(0 0px 0px rgba(0,0,0,0))!important; background: transparent!important; }
@@ -353,6 +516,20 @@ a, a:hover, a:visited, a:active {
   .columnizer-cols1 .columnizer-col, .columnizer-cols2 .columnizer-col, .columnizer-cols3 .columnizer-col {
     width: 100%;
     margin-left: 0;
+  }
+  #branding-footer {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .row > [class*="span"] {
+      display: block !important;
+      float: none !important;
+      margin-left: 0 !important;
+      width: auto !important;
+    }
+  }
+  #copyright-footer {
+    padding-left: 20px;
   }
 }
 
