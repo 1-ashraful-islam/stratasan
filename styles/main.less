@@ -3,6 +3,7 @@
 // Also, some javascript libraries (e.g. fancybox) append dom elements directly
 // to the body. Add the ".themed" class to those elements and you can style them
 // here as well. It's not a great solution, but at least it works!
+
 // uncomment next line in local theming environment
 //@import 'palette-transparent';
 //@import 'palette-custom';
@@ -29,7 +30,7 @@
 #populr > .inline-logo-title();
 
 #main-region, #footer-region {
-  padding: 0 10px
+  padding: 0 10px;
 }
 
 #footer-region {
@@ -97,14 +98,14 @@ a, a:hover, a:visited, a:active {
   .link-color();
 }
 
-.title-color() when (luma(@background-color) > 75%) {
+.title-color() when(luma(@background-color) > 75%) {
   color: #555;
-  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+  text-shadow: 0px 1px 1px rgba(0,0,0,0.3);
 }
 
-.title-color() when (luma(@background-color) =< 75%) {
+.title-color() when(luma(@background-color) =< 75%) {
   color: #fff;
-  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.6);
+  text-shadow: 0px 1px 1px rgba(0,0,0,0.6);
 }
 
 #pop-title {
@@ -184,7 +185,8 @@ a, a:hover, a:visited, a:active {
   }
 }
 
-.asset-type-embedgroup.asset-size-1 h2.asset-title {
+
+.asset-type-embedgroup .asset-size-1 h2.asset-title {
   margin-bottom: 0;
 }
 
@@ -210,16 +212,13 @@ a, a:hover, a:visited, a:active {
   }
   .file-extensions(@index - 1);
 }
-
-.file-extensions(0) {
-}
+.file-extensions(0) {}
 
 /* ICONS PROVIDED BY medialoot.com */
 
 .icon_width(@col_width, @num_icons) {
   width: (@col_width - (20px * (@num_icons + 1))) / @num_icons !important;
 }
-
 
 .columnizer-col1 .documents > li {
   height: 92px;
@@ -393,11 +392,13 @@ a, a:hover, a:visited, a:active {
       text-decoration: underline;
     }
   }
-  em a, i a {
+  em , i {
+    a {
     color: darken(#b4e0fa, 30%);
     text-decoration: underline;
     &:hover {
       text-decoration: none;
+    }
     }
   }
 }
@@ -681,4 +682,3 @@ html.ie7 {
     color: @custom-color;
   }
 }
-
