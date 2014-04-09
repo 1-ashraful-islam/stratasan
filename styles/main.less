@@ -384,20 +384,22 @@ a, a:hover, a:visited, a:active {
 #footer-region {
   .link-btn {
     background-color: #fff !important;
-    color: @custom-color;
+    color: @custom-color !important;
   }
   a {
     color: #fff;
     text-decoration: none;
     &:hover {
       text-decoration: underline;
+      color: #fff;
     }
   }
   em a, i a {
-    color: darken(#b4e0fa, 30%);
+    color: darken(#b4e0fa, 30%) !important;
     text-decoration: underline;
     &:hover {
       text-decoration: none;
+      color: darken(#b4e0fa, 30%) !important;
     }
   }
 }
@@ -411,12 +413,11 @@ strong, em, b, i {
   }
 }
 
-#main-region .asset-type-text .asset-size-2 i,
-#main-region .asset-type-text .asset-size-2 em {
-  color: #666;
+#main-region .body i,
+#main-region .body em {
+  color: #666 !important;
 }
-
-.columnizer-row-contents-text-text-text .columnizer-col {
+/*.columnizer-row-contents-text-text-text .columnizer-col {
   width: 220px;
   margin-left: 20px;
 
@@ -425,7 +426,7 @@ strong, em, b, i {
 .columnizer-row-contents-text-text-text *:last-child {
   width: 400px;
   margin-left: 80px;
-  body {
+  .body {
     font-size: 13px;
   }
 }
@@ -434,7 +435,7 @@ strong, em, b, i {
   width: 220px;
   margin-right: 20px;
   margin-left: 0;
-}
+}*/
 
 .populr-image-slider {
   background: #f8f8f8;
