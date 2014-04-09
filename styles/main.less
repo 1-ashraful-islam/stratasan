@@ -392,12 +392,12 @@ a, a:hover, a:visited, a:active {
     &:hover {
       text-decoration: underline;
     }
-    em &, i & {
-      color: darken(#b4e0fa, 30%);
-      text-decoration: underline;
-      &:hover {
-        text-decoration: none;
-      }
+  }
+  em a, i a {
+    color: darken(#b4e0fa, 30%);
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
     }
   }
 }
@@ -411,7 +411,8 @@ strong, em, b, i {
   }
 }
 
-#main-region .asset-type-text .asset-size-2 i, em {
+#main-region .asset-type-text .asset-size-2 i,
+#main-region .asset-type-text .asset-size-2 em {
   color: #666;
 }
 
