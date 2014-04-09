@@ -1,409 +1,370 @@
 <!DOCTYPE html>
 <html itemscope>
 <head>
-    <meta charset="utf-8">
-    <!-- Name of yur theme -->
-    <title>Edgefield</title>
+  <meta charset="utf-8">
+  <!-- Name of yur theme -->
+  <title>Edgefield</title>
 
-    <meta itemprop="palette" content="palette-default" title="Default" data-preview="#ffffff,#222222">
-    <meta itemprop="palette" content="palette-custom" title="Custom" data-preview="custom">
-    <meta itemprop="palette" content="palette-transparent" title="Transparent" data-preview="transparent">
+  <meta itemprop="palette" content="palette-default" title="Default" data-preview="#ffffff,#222222">
+  <meta itemprop="palette" content="palette-custom" title="Custom" data-preview="custom">
+  <meta itemprop="palette" content="palette-transparent" title="Transparent" data-preview="transparent">
 
-    <!-- Add any styles your theme requires here -->
-    <link rel="stylesheet/less" type="text/css" href="styles/main.less">
-    <meta itemprop="dummyImageCategory" content="Landscapes">
-    <meta itemprop="dummyContentLength" content="short">
-    <meta itemprop="defaultBackground" content="/images/bg.jpg" data-position="c" data-style="tile"
-          data-color="#2b2a2a">
-    <!-- This script loads the Populr theming engine. Populr will automatically
-         remove it at runtime. -->
-    <script src="http://populr.me/assets/developers/themer.js"></script>
-    <!-- Add any javscript your theme requires here -->
-    <script src="js/tooltipsy/tooltipsy.min.js"></script>
-    <script src="js/main.js"></script>
+  <!-- Add any styles your theme requires here -->
+  <link rel="stylesheet/less" type="text/css" href="styles/main.less">
+  <meta itemprop="dummyImageCategory" content="Landscapes">
+  <meta itemprop="dummyContentLength" content="short">
+  <meta itemprop="defaultBackground" content="/images/bg.jpg" data-position="c" data-style="tile" data-color="#2b2a2a">
+  <!-- This script loads the Populr theming engine. Populr will automatically
+       remove it at runtime. -->
+  <script src="http://populr.me/assets/developers/themer.js"></script>
+  <!-- Add any javscript your theme requires here -->
+  <script src="js/tooltipsy/tooltipsy.min.js"></script>
+  <script src="js/main.js"></script>
 </head>
 <body>
-<!-- Put your theme's inside this script tag. The script tag will
-     prevent issues with quote escaping and invalid markup. -->
-<script id="theme" type="text/x-handlebars-template">
-<div id="header">
-    <div id="top-logo"></div>
-</div>
-<div id="header-separator"></div>
-{{#region "columnizer" id="main-region" max_cols="3" max_auto_assets="0" dummy_content="I-3,I-2,I-1|I-2,V-1|I-1|V-1|V-1,V-1|V-1,V-2,V-3|E-2,T-1,T-3|D-1|D-6|D-3,I-1,T-1|T-1,I-4|T-1"}}
+  <!-- Put your theme's inside this script tag. The script tag will
+       prevent issues with quote escaping and invalid markup. -->
+  <script id="theme" type="text/x-handlebars-template">
+    <div id="header">
+        <div id="top-logo"></div>
+    </div>
+    <div id="header-separator"></div>
+    {{#region "columnizer" id="main-region" max_cols="3" max_auto_assets="0" dummy_content="I-3,I-2,I-1|I-2,V-1|I-1|V-1|V-1,V-1|V-1,V-2,V-3|E-2,T-1,T-3|D-1|D-6|D-3,I-1,T-1|T-1,I-4|T-1"}}
 
-{{#asset "text" size="1"}}
-<div class="asset-text">
-    {{{title}}}
-    {{{body}}}
-</div>
-{{/asset}}
-{{#asset "text" size="2"}}
-<div class="asset-text">
-    {{{title}}}
-    {{{body}}}
-</div>
-{{/asset}}
-{{#asset "text" size="3"}}
-<div class="asset-text">
-    {{{title}}}
-    {{{body}}}
-</div>
-{{/asset}}
-
-{{#asset "imagegroup" size="1"}}
-<div class="asset-content">
-    {{{imageslider images width=948 height=550 prevnext-enabled=false pager-enabled=true}}}
-</div>
-{{#if_or title_visible description_visible}}
-<div class="asset-text">
-    {{{title}}}
-    {{{description}}}
-</div>
-{{/if_or}}
-{{/asset}}
-
-{{#asset "imagegroup" size="2"}}
-<div class="asset-content">
-    {{{imageslider images width=457 height=260 prevnext-enabled=false pager-enabled=true}}}
-</div>
-{{#if_or title_visible description_visible}}
-<div class="asset-text">
-    {{{title}}}
-    {{{description}}}
-</div>
-{{/if_or}}
-{{/asset}}
-
-{{#asset "imagegroup" size="3"}}
-<div class="asset-content">
-    {{{imageslider images width=294 height=230 prevnext-enabled=false pager-enabled=true}}}
-</div>
-{{#if_or title_visible description_visible}}
-<div class="asset-text">
-    {{{title}}}
-    {{{description}}}
-</div>
-{{/if_or}}
-{{/asset}}
-
-{{#asset "documentgroup" size="1"}}
-{{#if_or title_visible description_visible}}
-<div class="asset-text">
-    {{{title}}}
-    {{{description}}}
-</div>
-{{/if_or}}
-<ul class="documents">
-    {{#each documents}}
-    <li><a href="{{{original_url}}}"
-           data-tooltipsy-content="{{{source_file_name}}} ({{{format_file_size source_file_size}}})">
-        <div class="title">
-            <div class="extension extension-{{{extension}}}">{{{extension}}}</div>
-            {{{title}}}
+      {{#asset "text" size="1"}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{body}}}
         </div>
-    </a></li>
-    {{/each}}
-</ul>
-{{/asset}}
-{{#asset "documentgroup" size="2"}}
-{{#if_or title_visible description_visible}}
-<div class="asset-text">
-    {{{title}}}
-    {{{description}}}
-</div>
-{{/if_or}}
-<ul class="documents">
-    {{#each documents}}
-    <li><a href="{{{original_url}}}"
-           data-tooltipsy-content="{{{source_file_name}}} ({{{format_file_size source_file_size}}})">
-        <div class="extension extension-{{{extension}}}">{{{extension}}}</div>
-        {{{title}}}</a></li>
-    {{/each}}
-</ul>
-{{/asset}}
-{{#asset "documentgroup" size="3"}}
-{{#if_or title_visible description_visible}}
-<div class="asset-text">
-    {{{title}}}
-    {{{description}}}
-</div>
-{{/if_or}}
-<ul class="documents">
-    {{#each documents}}
-    <li><a href="{{{original_url}}}"
-           data-tooltipsy-content="{{{source_file_name}}} ({{{format_file_size source_file_size}}})">
-        <div class="extension extension-{{{extension}}}">{{{extension}}}</div>
-        {{{title}}}</a></li>
-    {{/each}}
-</ul>
-{{/asset}}
-
-{{#asset "embedgroup" size="1" width="960"}}
-{{#if title_visible}}
-<div class="asset-text">
-    {{{title}}}
-</div>
-{{/if}}
-<div class="asset-content">
-    {{#each embeds}}
-    {{{html}}}
-    {{/each}}
-</div>
-{{#if description_visible}}
-<div class="asset-text">
-    {{{description}}}
-</div>
-{{/if}}
-{{/asset}}
-
-{{#asset "embedgroup" size="2" width="469"}}
-{{#if_or title_visible description_visible}}
-<div class="asset-text">
-    {{{title}}}
-    {{{description}}}
-</div>
-{{/if_or}}
-<div class="asset-content">
-    {{#each embeds}}
-    {{{html}}}
-    {{/each}}
-</div>
-{{/asset}}
-
-{{#asset "embedgroup" size="3" width="306"}}
-<div class="asset-content">
-    {{#each embeds}}
-    {{{html}}}
-    {{/each}}
-</div>
-{{#if_or title_visible description_visible}}
-<div class="asset-text">
-    {{{title}}}
-    {{{description}}}
-</div>
-{{/if_or}}
-{{/asset}}
-
-{{/region}}
-
-<div id="footer-separator"></div>
-{{#region "columnizer" id="footer-region" max_cols="3" max_auto_assets="1" dummy_content="I-3,I-2,I-1|I-2,V-1|I-1|V-1|V-1,V-1|V-1,V-2,V-3|E-2,T-1,T-3|D-1|D-6|D-3,I-1,T-1|T-1,I-4|T-1"}}
-
-
-{{#asset "text" size="1"}}
-<div class="asset-text">
-    {{{title}}}
-    {{{body}}}
-</div>
-{{/asset}}
-{{#asset "text" size="2"}}
-<div class="asset-text">
-    {{{title}}}
-    {{{body}}}
-</div>
-{{/asset}}
-{{#asset "text" size="3"}}
-<div class="asset-text">
-    {{{title}}}
-    {{{body}}}
-</div>
-{{/asset}}
-
-{{#asset "imagegroup" size="1"}}
-<div class="asset-content">
-    {{{imageslider images width=948 height=550 prevnext-enabled=false pager-enabled=true}}}
-</div>
-{{#if_or title_visible description_visible}}
-<div class="asset-text">
-    {{{title}}}
-    {{{description}}}
-</div>
-{{/if_or}}
-{{/asset}}
-
-{{#asset "imagegroup" size="2"}}
-<div class="asset-content">
-    {{{imageslider images width=457 height=260 prevnext-enabled=false pager-enabled=true}}}
-</div>
-{{#if_or title_visible description_visible}}
-<div class="asset-text">
-    {{{title}}}
-    {{{description}}}
-</div>
-{{/if_or}}
-{{/asset}}
-
-{{#asset "imagegroup" size="3"}}
-<div class="asset-content">
-    {{{imageslider images width=294 height=230 prevnext-enabled=false pager-enabled=true}}}
-</div>
-{{#if_or title_visible description_visible}}
-<div class="asset-text">
-    {{{title}}}
-    {{{description}}}
-</div>
-{{/if_or}}
-{{/asset}}
-
-{{#asset "documentgroup" size="1"}}
-{{#if_or title_visible description_visible}}
-<div class="asset-text">
-    {{{title}}}
-    {{{description}}}
-</div>
-{{/if_or}}
-<ul class="documents">
-    {{#each documents}}
-    <li><a href="{{{original_url}}}"
-           data-tooltipsy-content="{{{source_file_name}}} ({{{format_file_size source_file_size}}})">
-        <div class="title">
-            <div class="extension extension-{{{extension}}}">{{{extension}}}</div>
-            {{{title}}}
+      {{/asset}}
+      {{#asset "text" size="2"}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{body}}}
         </div>
-    </a></li>
-    {{/each}}
-</ul>
-{{/asset}}
-{{#asset "documentgroup" size="2"}}
-{{#if_or title_visible description_visible}}
-<div class="asset-text">
-    {{{title}}}
-    {{{description}}}
-</div>
-{{/if_or}}
-<ul class="documents">
-    {{#each documents}}
-    <li><a href="{{{original_url}}}"
-           data-tooltipsy-content="{{{source_file_name}}} ({{{format_file_size source_file_size}}})">
-        <div class="extension extension-{{{extension}}}">{{{extension}}}</div>
-        {{{title}}}</a></li>
-    {{/each}}
-</ul>
-{{/asset}}
-{{#asset "documentgroup" size="3"}}
-{{#if_or title_visible description_visible}}
-<div class="asset-text">
-    {{{title}}}
-    {{{description}}}
-</div>
-{{/if_or}}
-<ul class="documents">
-    {{#each documents}}
-    <li><a href="{{{original_url}}}"
-           data-tooltipsy-content="{{{source_file_name}}} ({{{format_file_size source_file_size}}})">
-        <div class="extension extension-{{{extension}}}">{{{extension}}}</div>
-        {{{title}}}</a></li>
-    {{/each}}
-</ul>
-{{/asset}}
+      {{/asset}}
+      {{#asset "text" size="3"}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{body}}}
+        </div>
+      {{/asset}}
 
-{{#asset "embedgroup" size="1" width="960"}}
-{{#if title_visible}}
-<div class="asset-text">
-    {{{title}}}
-</div>
-{{/if}}
-<div class="asset-content">
-    {{#each embeds}}
-    {{{html}}}
-    {{/each}}
-</div>
-{{#if description_visible}}
-<div class="asset-text">
-    {{{description}}}
-</div>
-{{/if}}
-{{/asset}}
+      {{#asset "imagegroup" size="1"}}
+        <div class="asset-content">
+          {{{imageslider images width=948 height=550 prevnext-enabled=false pager-enabled=true}}}
+        </div>
+        {{#if_or title_visible description_visible}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{description}}}
+        </div>
+        {{/if_or}}
+      {{/asset}}
 
-{{#asset "embedgroup" size="2" width="469"}}
-<div class="asset-content">
-    {{#each embeds}}
-    {{{html}}}
-    {{/each}}
-</div>
-{{#if_or title_visible description_visible}}
-<div class="asset-text">
-    {{{title}}}
-    {{{description}}}
-</div>
-{{/if_or}}
-{{/asset}}
+      {{#asset "imagegroup" size="2"}}
+        <div class="asset-content">
+          {{{imageslider images width=457 height=260 prevnext-enabled=false pager-enabled=true}}}
+        </div>
+        {{#if_or title_visible description_visible}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{description}}}
+        </div>
+        {{/if_or}}
+      {{/asset}}
 
-{{#asset "embedgroup" size="3" width="306"}}
-<div class="asset-content">
-    {{#each embeds}}
-    {{{html}}}
-    {{/each}}
-</div>
-{{#if_or title_visible description_visible}}
-<div class="asset-text">
-    {{{title}}}
-    {{{description}}}
-</div>
-{{/if_or}}
-{{/asset}}
+      {{#asset "imagegroup" size="3"}}
+        <div class="asset-content">
+          {{{imageslider images width=294 height=230 prevnext-enabled=false pager-enabled=true}}}
+        </div>
+        {{#if_or title_visible description_visible}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{description}}}
+        </div>
+        {{/if_or}}
+      {{/asset}}
 
-{{/region}}
-<div id="branding-footer">
-    <div class="container">
-        <div class="row">
-            <div class="span8 company-info">
-                <div id="bottom-logo"></div>
-                <div id="text-7" class="widget widget_text">
-                    <div class="textwidget"><h4 class="company-info-header">What is Stratasan?</h4>
+      {{#asset "documentgroup" size="1"}}
+        {{#if_or title_visible description_visible}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{description}}}
+        </div>
+        {{/if_or}}
+        <ul class="documents">
+        {{#each documents}}
+          <li><a href="{{{original_url}}}" data-tooltipsy-content="{{{source_file_name}}} ({{{format_file_size source_file_size}}})"><div class="title"><div class="extension extension-{{{extension}}}">{{{extension}}}</div>{{{title}}}</div></a></li>
+        {{/each}}
+        </ul>
+      {{/asset}}
+      {{#asset "documentgroup" size="2"}}
+        {{#if_or title_visible description_visible}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{description}}}
+        </div>
+        {{/if_or}}
+        <ul class="documents">
+        {{#each documents}}
+          <li><a href="{{{original_url}}}" data-tooltipsy-content="{{{source_file_name}}} ({{{format_file_size source_file_size}}})"><div class="extension extension-{{{extension}}}">{{{extension}}}</div>{{{title}}}</a></li>
+        {{/each}}
+        </ul>
+      {{/asset}}
+      {{#asset "documentgroup" size="3"}}
+        {{#if_or title_visible description_visible}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{description}}}
+        </div>
+        {{/if_or}}
+        <ul class="documents">
+        {{#each documents}}
+          <li><a href="{{{original_url}}}" data-tooltipsy-content="{{{source_file_name}}} ({{{format_file_size source_file_size}}})"><div class="extension extension-{{{extension}}}">{{{extension}}}</div>{{{title}}}</a></li>
+        {{/each}}
+        </ul>
+      {{/asset}}
 
-                        <p>Stratasan provides advanced analytics to hospitals, surgery centers, pharmaceuticals, health
-                            plans, physician offices, and communities. Stratasan provides instant access to layers of
-                            data including health care service demand, demographic, socioeconomic, behavioral, and
-                            geographic data through annual subscriptions and individual reports. Stratasan maintains
-                            more than a billion health records from Federal, State, Local, and Private data sources.</p>
+      {{#asset "embedgroup" size="1" width="960"}}
+        {{#if title_visible}}
+          <div class="asset-text">
+            {{{title}}}
+          </div>
+        {{/if}}
+        <div class="asset-content">
+          {{#each embeds}}
+            {{{html}}}
+          {{/each}}
+        </div>
+        {{#if description_visible}}
+          <div class="asset-text">
+            {{{description}}}
+          </div>
+        {{/if}}
+      {{/asset}}
+
+      {{#asset "embedgroup" size="2" width="469"}}
+        {{#if_or title_visible description_visible}}
+    <div class="asset-text">
+        {{{title}}}
+        {{{description}}}
+    </div>
+    {{/if_or}}
+    <div class="asset-content">
+        {{#each embeds}}
+        {{{html}}}
+        {{/each}}
+    </div>
+    {{/asset}}
+
+      {{#asset "embedgroup" size="3" width="306"}}
+        <div class="asset-content">
+          {{#each embeds}}
+            {{{html}}}
+          {{/each}}
+        </div>
+        {{#if_or title_visible description_visible}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{description}}}
+        </div>
+        {{/if_or}}
+      {{/asset}}
+
+    {{/region}}
+
+    <div id="footer-separator"></div>
+    {{#region "columnizer" id="footer-region" max_cols="3" max_auto_assets="1" dummy_content="I-3,I-2,I-1|I-2,V-1|I-1|V-1|V-1,V-1|V-1,V-2,V-3|E-2,T-1,T-3|D-1|D-6|D-3,I-1,T-1|T-1,I-4|T-1"}}
+
+
+      {{#asset "text" size="1"}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{body}}}
+        </div>
+      {{/asset}}
+      {{#asset "text" size="2"}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{body}}}
+        </div>
+      {{/asset}}
+      {{#asset "text" size="3"}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{body}}}
+        </div>
+      {{/asset}}
+
+      {{#asset "imagegroup" size="1"}}
+        <div class="asset-content">
+          {{{imageslider images width=948 height=550 prevnext-enabled=false pager-enabled=true}}}
+        </div>
+        {{#if_or title_visible description_visible}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{description}}}
+        </div>
+        {{/if_or}}
+      {{/asset}}
+
+      {{#asset "imagegroup" size="2"}}
+        <div class="asset-content">
+          {{{imageslider images width=457 height=260 prevnext-enabled=false pager-enabled=true}}}
+        </div>
+        {{#if_or title_visible description_visible}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{description}}}
+        </div>
+        {{/if_or}}
+      {{/asset}}
+
+      {{#asset "imagegroup" size="3"}}
+        <div class="asset-content">
+          {{{imageslider images width=294 height=230 prevnext-enabled=false pager-enabled=true}}}
+        </div>
+        {{#if_or title_visible description_visible}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{description}}}
+        </div>
+        {{/if_or}}
+      {{/asset}}
+
+      {{#asset "documentgroup" size="1"}}
+        {{#if_or title_visible description_visible}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{description}}}
+        </div>
+        {{/if_or}}
+        <ul class="documents">
+        {{#each documents}}
+          <li><a href="{{{original_url}}}" data-tooltipsy-content="{{{source_file_name}}} ({{{format_file_size source_file_size}}})"><div class="title"><div class="extension extension-{{{extension}}}">{{{extension}}}</div>{{{title}}}</div></a></li>
+        {{/each}}
+        </ul>
+      {{/asset}}
+      {{#asset "documentgroup" size="2"}}
+        {{#if_or title_visible description_visible}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{description}}}
+        </div>
+        {{/if_or}}
+        <ul class="documents">
+        {{#each documents}}
+          <li><a href="{{{original_url}}}" data-tooltipsy-content="{{{source_file_name}}} ({{{format_file_size source_file_size}}})"><div class="extension extension-{{{extension}}}">{{{extension}}}</div>{{{title}}}</a></li>
+        {{/each}}
+        </ul>
+      {{/asset}}
+      {{#asset "documentgroup" size="3"}}
+        {{#if_or title_visible description_visible}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{description}}}
+        </div>
+        {{/if_or}}
+        <ul class="documents">
+        {{#each documents}}
+          <li><a href="{{{original_url}}}" data-tooltipsy-content="{{{source_file_name}}} ({{{format_file_size source_file_size}}})"><div class="extension extension-{{{extension}}}">{{{extension}}}</div>{{{title}}}</a></li>
+        {{/each}}
+        </ul>
+      {{/asset}}
+
+      {{#asset "embedgroup" size="1" width="960"}}
+        {{#if title_visible}}
+          <div class="asset-text">
+            {{{title}}}
+          </div>
+        {{/if}}
+        <div class="asset-content">
+          {{#each embeds}}
+            {{{html}}}
+          {{/each}}
+        </div>
+        {{#if description_visible}}
+          <div class="asset-text">
+            {{{description}}}
+          </div>
+        {{/if}}
+      {{/asset}}
+
+      {{#asset "embedgroup" size="2" width="469"}}
+        <div class="asset-content">
+          {{#each embeds}}
+            {{{html}}}
+          {{/each}}
+        </div>
+        {{#if_or title_visible description_visible}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{description}}}
+        </div>
+        {{/if_or}}
+      {{/asset}}
+
+      {{#asset "embedgroup" size="3" width="306"}}
+        <div class="asset-content">
+          {{#each embeds}}
+            {{{html}}}
+          {{/each}}
+        </div>
+        {{#if_or title_visible description_visible}}
+        <div class="asset-text">
+          {{{title}}}
+          {{{description}}}
+        </div>
+        {{/if_or}}
+      {{/asset}}
+
+    {{/region}}
+            <div id="branding-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="span8 company-info">
+                            <div id="bottom-logo"></div>
+                            <div id="text-7" class="widget widget_text">			<div class="textwidget"><h4 class="company-info-header">What is Stratasan?</h4>
+
+                                <p>Stratasan provides advanced analytics to hospitals, surgery centers, pharmaceuticals, health plans, physician offices, and communities. Stratasan provides instant access to layers of data including health care service demand, demographic, socioeconomic, behavioral, and geographic data through annual subscriptions and individual reports.  Stratasan maintains more than a billion health records from Federal, State, Local, and Private data sources.</p></div>
+                            </div>
+
+                        </div>
+                        <div class="span3 offset1" id="footer-social-links">
+                            <ul class="unstyled">
+                                <li><a href="http://stratasan.us2.list-manage.com/subscribe?u=d8528e5c046ed6ac6624ccb66&amp;id=489c3af2e3" class="social-footer email-footer" target="_blank">Subscribe to our newsletter</a></li>
+                                <!--  <li><a href="http://www.facebook.com/pages/Stratasan/234916316538844" class="social-footer facebook-footer" title="Stratasan on Facebook" target="_blank">Like us on Facebook</a></li> -->
+                                <li><a href="https://twitter.com/stratasan" class="social-footer twitter-footer" title="Stratasan on Twitter" target="_blank">Follow Us on Twitter</a></li>
+                                <li><a href="http://www.linkedin.com/company/stratasan" title="Stratasan on LinkedIn" class="social-footer linkedin-footer" target="_blank">Join our network on LinkedIn</a></li>
+                                <li><a href="http://www.stratasan.com/feed/" class="social-footer rss-footer">Subscribe to the blog RSS feed</a></li>
+                            </ul>
+                        </div>
+                        <div class="span4" id="contact-info">
+                            <address>
+                                <strong>Phone:</strong> 866-628-5051<br>
+                                <strong>Fax:</strong> 615-208-9657<br>
+                                <strong>Email:</strong> <a href="http://www.stratasan.com/contact" title="Contact form link">info@stratasan.com</a><br>
+                            </address>
+                            <div id="text-9" class="widget widget_text">			<div class="textwidget">            <a href="http://www.stratasan.com/contact" title="Contact form link" class="bttn white large">Request a Consultation »</a><br>
+                                <a href="http://stratasan.com/products/white-papers/" title="View White Pages" class="bttn white large">View White Papers »</a></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
             </div>
-            <div class="span3 offset1" id="footer-social-links">
-                <ul class="unstyled">
-                    <li>
-                        <a href="http://stratasan.us2.list-manage.com/subscribe?u=d8528e5c046ed6ac6624ccb66&amp;id=489c3af2e3"
-                           class="social-footer email-footer" target="_blank">Subscribe to our newsletter</a></li>
-                    <!--  <li><a href="http://www.facebook.com/pages/Stratasan/234916316538844" class="social-footer facebook-footer" title="Stratasan on Facebook" target="_blank">Like us on Facebook</a></li> -->
-                    <li><a href="https://twitter.com/stratasan" class="social-footer twitter-footer"
-                           title="Stratasan on Twitter" target="_blank">Follow Us on Twitter</a></li>
-                    <li><a href="http://www.linkedin.com/company/stratasan" title="Stratasan on LinkedIn"
-                           class="social-footer linkedin-footer" target="_blank">Join our network on LinkedIn</a></li>
-                    <li><a href="http://www.stratasan.com/feed/" class="social-footer rss-footer">Subscribe to the blog
-                        RSS feed</a></li>
-                </ul>
-            </div>
-            <div class="span4" id="contact-info">
-                <address>
-                    <strong>Phone:</strong> 866-628-5051<br>
-                    <strong>Fax:</strong> 615-208-9657<br>
-                    <strong>Email:</strong> <a href="http://www.stratasan.com/contact" title="Contact form link">info@stratasan.com</a><br>
-                </address>
-                <div id="text-9" class="widget widget_text">
-                    <div class="textwidget"><a href="http://www.stratasan.com/contact" title="Contact form link"
-                                               class="bttn white large">Request a Consultation »</a><br>
-                        <a href="http://stratasan.com/products/white-papers/" title="View White Pages"
-                           class="bttn white large">View White Papers »</a></div>
+    <div id="copyright-footer" >
+        <div class="container">
+            <div class="row">
+                <div class="span16">
+                    <p>&copy; Stratasan. All Rights Reserved.</p>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div id="copyright-footer">
-    <div class="container">
-        <div class="row">
-            <div class="span16">
-                <p>&copy; Stratasan. All Rights Reserved.</p>
-            </div>
-        </div>
-    </div>
-</div>
 
-{{pop_links}}
+    {{pop_links}}
 
-</script>
+  </script>
 </body>
 </html>
