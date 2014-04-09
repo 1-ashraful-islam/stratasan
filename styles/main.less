@@ -172,7 +172,7 @@ a, a:hover, a:visited, a:active {
   .asset-background();
 
   .asset-text {
-    padding: @text-padding 0 0;
+    padding: 35px 0 0;
   }
 
   h2.asset-title {
@@ -202,11 +202,11 @@ a, a:hover, a:visited, a:active {
 @sprite-width: 42px;
 @sprite-height: 42px;
 @filetypes: "['file','zip','xls','wps','wpd','wmv','wma','wav','vob','vcd','txt','ttf','torrent','tif','tgz','swf','ss','sql','sitx','sit','ses','sea','rtf','rmvb','rm','rar','ram','qxd','qbw','qbb','pub','ptb','pst','psd','ps','ppt','pps','png','pdf','ogg','msi','mpg','mpeg','mp4','mp3','mp2','mov','mid','mdb','mcd','m4v','m4p','m4b','m4a','log','lnk','jpg','jpeg','jar','iso','indd','ifo','html','htm','hqx','gz','gif','flv','fla','exe','eps','eml','dwg','dvf','dss','doc','dmg','dll','divx','dat','chm','cdr','cdl','cda','cbr','cab','bup','bmp','bin','bat','avi','asx','asf','amr','aiff','aif','ai','ace','7z','3gp']";
-@filetypes-length: ~ `eval(@{filetypes}).length`;
+@filetypes-length: ~`eval(@{filetypes}).length`;
 
 .file-extensions(@index) when (@index > 0) {
   (~".extension-`eval(@{filetypes})[@{index} - 1]`") {
-    background-position: ~ `(((@{index} - @{filetypes-length}) % @{sprite-cols}) * parseInt("@{sprite-width}", 10)) + "px"` ~ `((Math.ceil((@{index} - @{filetypes-length}) / @{sprite-cols})) * parseInt("@{sprite-height}", 10)) + "px"`;
+    background-position: ~`(((@{index} - @{filetypes-length}) % @{sprite-cols}) * parseInt("@{sprite-width}", 10)) + "px"` ~`((Math.ceil((@{index} - @{filetypes-length}) / @{sprite-cols})) * parseInt("@{sprite-height}", 10)) + "px"`;
   }
   .file-extensions(@index - 1);
 }
